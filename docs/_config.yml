@@ -32,7 +32,7 @@ twitter_username: jekyllrb
 github_username:  ConstantinRuhdorfer
 
 # Build settings
-theme: hyde
+remote_theme: hydecorp/hydejack
 plugins:
   - jekyll-feed
 
