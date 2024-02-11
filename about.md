@@ -4,7 +4,7 @@ title: About
 ---
 
 
-Hi, I am a Ph.D. scholar at International Max Planck Research School on Intelligent Systems (IMPRS-IS) and the Human Computer Interaction and Cognitive Systems (HCI CS) group at the University of Stuttgart, Germany. 
+Hi, I am a Ph.D. scholar at International [Max Planck Research School for Intelligent Systems (IMPRS-IS)](https://imprs.is.mpg.de) and the [Human Computer Interaction and Cognitive Systems (HCI CS) department](https://www.perceptualui.org/) at the University of Stuttgart, Germany. 
 I work to improve human-AI cooperation by investigating the intersection of Machine Theory of Mind and Multi-Agent Reinforcement Learning.
 
 You can find more about my work [here](https://www.perceptualui.org/people/ruhdorfer/) or find me on [google scholar](https://scholar.google.de/citations?user=Bb4aplwAAAAJ&hl=de).
