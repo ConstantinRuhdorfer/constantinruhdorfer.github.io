@@ -8,8 +8,8 @@ permalink:        pretty
 
 # Setup
 title:            Constantin Ruhdorfer
-tagline:          'Ph.D. student in Human-AI Cooperation'
-description:      'Hi, I am a Ph.D. scholar at IMPRS-IS and the HCI-CS group at the University of Stuttgart, Germany.' # I work to improve human-AI cooperation by investigating the intersection of Machine Theory of Mind and Multi-Agent Reinforcement Learning.'
+tagline:          'Ph.D. student in Cooperative AI'
+description:      'Hi, I am a Ph.D. scholar at IMPRS-IS and Collaborative Artificial Intelligence at the University of Stuttgart, Germany.' # I work to improve human-AI cooperation by investigating the intersection of Machine Theory of Mind and Multi-Agent Reinforcement Learning.'
 url:              https://constantinruhdorfer.github.io/
 baseurl:          /
 
