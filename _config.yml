@@ -15,9 +15,11 @@ baseurl:          /
 
 author:
   name:           'Constantin Ruhdorfer'
-  url:            https://www.perceptualui.org/people/ruhdorfer/
+  url:            https://www.collaborative-ai.org/people/ruhdorfer/
 
 paginate:         5
+plugins:
+  - jekyll-paginate
 
 # Custom vars
 # version:          2.1.0

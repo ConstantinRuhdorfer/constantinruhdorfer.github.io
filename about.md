@@ -1,19 +1,15 @@
 ---
 layout: page
 title: About
+description: "Constantin Ruhdorfer is a Ph.D. candidate at the University of Stuttgart and IMPRS-IS, working on cooperative AI."
 ---
 
-Hi, I am a Ph.D. scholar at the [International Max Planck Research School for Intelligent Systems (IMPRS-IS)](https://imprs.is.mpg.de) and the [Collaborative Artificial Intelligence (CAI) group](https://www.collaborative-ai.org/) at the University of Stuttgart, Germany. 
-I work on cooperative AI. 
-My aim is to improve human-AI cooperation by investigating the intersection of Machine Theory of Mind and Multi-Agent Reinforcement Learning.
+I am a Ph.D. candidate in the [Collaborative AI group](https://www.collaborative-ai.org/) at the University of Stuttgart, advised by Andreas Bulling, and an [IMPRS-IS](https://imprs.is.mpg.de/) scholar.
 
-You can find more about my work [here](https://www.perceptualui.org/people/ruhdorfer/) or find me on [google scholar](https://scholar.google.de/citations?user=Bb4aplwAAAAJ&hl=de).
+I study how to train agents capable of effective cooperation in complex, open-ended environments.
 
 I obtained my masters degree in Informatics at the University of Stuttgart (with distinction).
 My master's thesis was awarded the **Rul Gunzenhäuser award**.
 Previously, I completed my bachelor's degree (with distinction) in Informatics at the Baden-Wuerttemberg Cooperative State University (also known as Duale Hochschule Baden-Wuerttemberg (DHBW) in german) in cooperation with diconium digital solutions GmbH where I worked in various departements as a software developer/student researcher.
 
-I my free time you will either find me coocking or likely bouldering.
-
-
-
+Outside research, I enjoy cooking and bouldering.

@@ -1,128 +1,88 @@
 ---
 layout: default
 title: Home
+description: "I study how to train agents capable of effective cooperation in complex, open-ended environments, through multi-agent reinforcement learning, generalisation, and social reasoning."
 ---
 
-<h1 class="post-title">Welcome!</h1>
+<h1 class="post-title">Cooperative AI in open-ended environments</h1>
 
-I am a Ph.D. candidate and research associate in the <a href="https://www.collaborative-ai.org/">Collaborative Artificial Intelligence (CAI)</a> group at the <a href="https://www.uni-stuttgart.de">University of Stuttgart</a>, supervised by <a href="https://www.collaborative-ai.org/people/bulling/">Prof. Dr. Andreas Bulling</a>.
-I am also a Ph.D. scholar with the <a href="https://imprs.is.mpg.de"> International Max Planck Research School for Intelligent Systems (IMPRS-IS)</a>. 
-My IMPRS-IS Thesis Advisory Committee includes Prof. Dr. Georg Martius (<a href="https://is.mpg.de/person/gmartius">Max Planck Institute for Intelliegent Systems</a>, <a href="https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/distributed-intelligence/team/prof-dr-georg-martius/">University of Tübingen</a>) and Dr. Charley Wu (<a href="https://uni-tuebingen.de/en/research/core-research/cluster-of-excellence-machine-learning/research/research/cluster-research-groups/research-groups/human-and-machine-cognition/">University of Tübingen</a>), alongside Prof. Bulling. 
+<p class="research-statement">I am interested in training agents capable of effective cooperation in complex, open-ended environments.</p>
 
-<br>
-<hr>
-I research cooperative AI with a focus on social reasoning and generalisation. 
-Specifically, I work on multi-agent reinforcement learning (MARL), ad-hoc teamwork, large language models (LLMs), and Theory of Mind (ToM) in cooperative tasks. 
-My long-term goal is to train agents capable of ad-hoc teamwork with diverse partners in unknown, open-ended environments.
+<p>I am a Ph.D. candidate and research associate in the <a href="https://www.collaborative-ai.org/">Collaborative Artificial Intelligence (CAI)</a> group at the <a href="https://www.uni-stuttgart.de/">University of Stuttgart</a>, advised by <a href="https://www.collaborative-ai.org/people/bulling/">Andreas Bulling</a>, and a scholar of the <a href="https://imprs.is.mpg.de/">International Max Planck Research School for Intelligent Systems (IMPRS-IS)</a>.</p>
 
-Among other things I research ...
-<ol>
-  <li>... the intersection between partner and environment generalisation. In <a href="https://arxiv.org/abs/2406.17949">The Overcooked Generalisation Challenge</a> we introduced a benchmark where agents must cooperate with novel partners in unknown environments. 
-    In <a href="https://arxiv.org/abs/2508.06336">Unsupervised Partner Design (UPD)</a>, we proposed a method addressing this challenge.</li>
-  <li>... how computational Theory of Mind can be used to improve human-AI cooperation. In the <a href="https://arxiv.org/abs/2508.12480">Yokai Learning Environment</a> we introduced a new zero-shot coordination benchmark for social reasoning, and in our work on LLMs we evaluated their Theory of Mind capabilities (e.g. <a href="https://www.arxiv.org/abs/2509.05066">1</a>, <a href="https://arxiv.org/abs/2406.17513">2</a>).</li>
+<p>My research spans multi-agent reinforcement learning, ad-hoc teamwork, world models, and computational Theory of Mind. I study how agents can generalise to unfamiliar teammates and environments, coordinate without training together, and reason about others' beliefs.</p>
+
+<p class="profile-links"><a href="https://scholar.google.de/citations?user=Bb4aplwAAAAJ&amp;hl=en">Google Scholar</a> <span aria-hidden="true">·</span> <a href="https://www.collaborative-ai.org/people/ruhdorfer/">Group profile</a> <span aria-hidden="true">·</span> <a href="{{ '/about/' | relative_url }}">About me</a></p>
+
+<section id="research" aria-labelledby="research-title">
+  <h2 id="research-title">Research</h2>
+  <h3>Generalisation and open-ended learning</h3>
+  <p>How can we train agents to cooperate beyond the partners and tasks they have seen? I develop methods and benchmarks for partner and environment generalisation, including <a href="https://arxiv.org/abs/2508.06336">Unsupervised Partner Design</a> and <a href="https://arxiv.org/abs/2406.17949">The Overcooked Generalisation Challenge</a>. My recent work also explores multi-agent world models in <i>DreamTeam</i> and continual multi-agent learning in <a href="https://proceedings.mlr.press/v306/tomilin26a.html">MEAL</a>.</p>
+
+  <h3>Coordination with unfamiliar partners</h3>
+  <p>How can independently trained agents to cooperate? I study zero-shot coordination through <a href="https://arxiv.org/abs/2511.22581">entropy regularisation</a> and <a href="https://arxiv.org/abs/2610.06025">grounded joint attention</a>.</p>
+
+  <h3>Social reasoning and language models</h3>
+  <p>I investigate whether language models can reason about other agents' beliefs and how they represent those beliefs internally, through work such as <a href="https://arxiv.org/abs/2509.05066">ToM-SSI</a> and <a href="https://arxiv.org/abs/2406.17513">Brittle Minds, Fixable Activations</a>. I am also exploring open-ended and population-based reinforcement learning for safer LLM post-training.</p>
+</section>
+
+<section id="news" aria-labelledby="news-title">
+  <h2 id="news-title">News</h2>
+  <div class="news-list">
+    {% for post in paginator.posts %}
+    <article class="news-item">
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %b %Y" }}</time>
+      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+      <p>{{ post.content | strip_html | truncatewords: 45 }}</p>
+    </article>
+    {% endfor %}
+  </div>
+  {% if paginator.total_pages > 1 %}
+  <nav class="pagination" aria-label="News pages">
+    {% if paginator.next_page %}
+      <a class="pagination-item older" href="{{ paginator.next_page_path | relative_url }}#news">Older news</a>
+    {% else %}
+      <span class="pagination-item older">Older news</span>
+    {% endif %}
+    {% if paginator.previous_page %}
+      <a class="pagination-item newer" href="{{ paginator.previous_page_path | relative_url }}#news">Newer news</a>
+    {% else %}
+      <span class="pagination-item newer">Newer news</span>
+    {% endif %}
+  </nav>
+  {% endif %}
+</section>
+
+<section id="publications" aria-labelledby="publications-title">
+<h2 id="publications-title">Publications</h2>
+<p>See <a href="https://scholar.google.de/citations?user=Bb4aplwAAAAJ&amp;hl=en">Google Scholar</a> for citation information. An asterisk (*) denotes equal contribution.</p>
+
+<h3>Preprints</h3>
+<ol class="publication-list">
+  <li><b>2026:</b> Benintendi, G.*, <b>Ruhdorfer, C.*</b>, Kögel, F. &amp; Bulling, A. <i>Grounded Joint-Attention Other-Play for Zero-Shot Coordination.</i> Preprint. <a href="https://arxiv.org/abs/2610.06025">[arXiv]</a></li>
 </ol>
 
-You can find more about me or my work on the <a href="{{ site.baseurl }}about">about page</a>, on our <a href="https://www.collaborative-ai.org/people/ruhdorfer/">groups website</a>, or on <a href="https://scholar.google.de/citations?user=Bb4aplwAAAAJ&hl=de">google scholar</a>.
-For students interested in a project or thesis please check the <a href="https://www.collaborative-ai.org/teaching/open-projects/">open thesis page</a>.
+<h3>Conference and journal papers</h3>
+<ol class="publication-list">
+  <li><b>2026:</b> Forkel, J., <b>Ruhdorfer, C.</b>, Beukman, M., Bulling, A. &amp; Foerster, J. N. <i>High Entropy Regularization Leads to Symmetry-Equivariant Policies in Dec-POMDPs.</i> NeurIPS 2026. <a href="https://www.collaborative-ai.org/publications/forkel26_neurips/">[website]</a> <a href="https://arxiv.org/abs/2511.22581">[arXiv]</a></li>
+  <li><b>2026:</b> <b>Ruhdorfer, C.</b>, Bortoletto, M., Forkel, J., Foerster, J. N. &amp; Bulling, A. <i>The Yōkai Learning Environment: Tracking Beliefs Over Space and Time.</i> Reinforcement Learning Conference (RLC). <a href="https://www.collaborative-ai.org/publications/ruhdorfer26_rlc/">[website]</a> <a href="https://arxiv.org/abs/2508.12480">[arXiv]</a></li>
+  <li><b>2026:</b> <b>Ruhdorfer, C.</b>, Bortoletto, M., Oei, V., Penzkofer, A. &amp; Bulling, A. <i>Unsupervised Partner Design Enables Robust Ad-hoc Teamwork.</i> International Conference on Machine Learning (ICML). <strong class="publication-highlight">Oral</strong> <a href="https://www.collaborative-ai.org/publications/ruhdorfer26_icml/">[website]</a> <a href="https://arxiv.org/abs/2508.06336">[arXiv]</a></li>
+  <li><b>2026:</b> Tomilin, T., van den Boogaard, L., Garcin, S., <b>Ruhdorfer, C.</b>, Grooten, B., Kusters, F., Du, Y., Bulling, A., Pechenizkiy, M. &amp; Fang, M. <i>MEAL: A Benchmark for Continual Multi-Agent Reinforcement Learning.</i> International Conference on Machine Learning (ICML). <a href="https://proceedings.mlr.press/v306/tomilin26a.html">[paper]</a></li>
+  <li><b>2025:</b> Bortoletto, M., <b>Ruhdorfer, C.</b> & Bulling, A. (2025). <i>ToM-SSI: Evaluating Theory of Mind in Situated Social Interactions.</i> Proc. Empirical Methods in Natural Language Processing (EMNLP) <a href="https://collaborative-ai.org/publications/bortoletto25_emnlp/">[website]</a> <a href="https://arxiv.org/abs/2509.05066">[arXiv]</a> </li>
+  <li><b>2025:</b> Bortoletto, M., <b>Ruhdorfer, C.</b>, Shi, L. & Bulling, A. (2025). <i>Brittle Minds, Fixable Activations: Understanding Belief Representations in Language Models.</i> Findings of Empirical Methods in Natural Language Processing (EMNLP Findings) <a href="https://collaborative-ai.org/publications/bortoletto25_femnlp/">[website]</a> <a href="https://arxiv.org/abs/2406.17513">[arXiv]</a></li>
+  <li><b>2025:</b> <b>Ruhdorfer, C.</b>, Bortoletto, M., Penzkofer, A. & Bulling, A. (2025). <i>The Overcooked Generalisation Challenge: Evaluating Cooperation with Novel Partners in Unknown Environments Using Unsupervised Environment Design.</i> Transactions on Machine Learning Research. <a href="https://openreview.net/pdf?id=K2KtcMlW6j">[paper]</a> <a href="https://www.collaborative-ai.org/publications/ruhdorfer25_tmlr/">[website]</a> <a href="https://arxiv.org/abs/2406.17949">[arXiv]</a></li>
+  <li><b>2024:</b> Bortoletto, M., <b>Ruhdorfer, C.</b>, Shi, L. & Bulling, A. (2024). <i>Explicit Modelling of Theory of Mind for Belief Prediction in Nonverbal Social Interactions.</i> Proc. European Conference on Artificial Intelligence (ECAI), pp. 866–873, 2024. <b>(oral)</b> <a href="https://collaborative-ai.org/publications/bortoletto24_ecai.pdf">[paper]</a> <a href="https://www.collaborative-ai.org/publications/bortoletto24_ecai/">[website]</a> <a href="https://arxiv.org/abs/2407.06762">[arXiv]</a></li>
+  <li><b>2024:</b> Bortoletto, M., <b>Ruhdorfer, C.*</b>, Abdessaied, A.*, Shi, L. & Bulling, A. (2024). <i>Limits of Theory of Mind Modelling in Dialogue-Based Collaborative Plan Acquisition.</i> Proc. 62nd Annual Meeting of the Association for Computational Linguistics (ACL), pp. 1–16, 2024. <a href="https://www.collaborative-ai.org/publications/bortoletto24_acl.pdf">[paper]</a> <a href="https://www.collaborative-ai.org/publications/bortoletto24_acl/">[website]</a> <a href="https://arxiv.org/abs/2405.12621">[arXiv]</a> <a href="https://aclanthology.org/2024.acl-long.266/">[acl]</a></li>
+  <li><b>2024:</b> Wang, Y., Jiang, Y., Hu, Z., <b>Ruhdorfer, C.</b>, Bâce, M., & Bulling, A. (2024). <i>VisRecall++: Analysing and Predicting Visualisation Recallability from Gaze Behaviour.</i> Proc. ACM on Human-Computer Interaction (PACM HCI), 8(ETRA), 1–18. <a href="https://www.collaborative-ai.org/publications/wang24_etra.pdf">[paper]</a> <a href="https://www.collaborative-ai.org/publications/wang24_etra/">[website]</a> <a href="https://dl.acm.org/doi/10.1145/3655613">[acm]</a></li>
+</ol>
 
-<h2 class="post-title">Publications</h2>
-
-<h3 class="post-title">Published</h3>
-<ol>
-  <li><b>2025:</b> Bortoletto, M., <b>Ruhdorfer, C.</b> & Bulling, A. (2025). <i>ToM-SSI: Evaluating Theory of Mind in Situated Social Interactions.</i> Proc. Empirical Methods in Natural Language Processing (EMNLP) <a href="https://collaborative-ai.org/publications/bortoletto25_emnlp/">[website]</a> <a href="https://www.arxiv.org/abs/2509.05066">[arxiv]</a> </li>
-  <li><b>2025:</b> Bortoletto, M., <b>Ruhdorfer, C.</b>, Shi, L. & Bulling, A. (2025). <i>Brittle Minds, Fixable Activations: Understanding Belief Representations in Language Models.</i> Findings of Empirical Methods in Natural Language Processing (EMNLP Findings) <a href="https://collaborative-ai.org/publications/bortoletto25_femnlp/">[website]</a> <a href="https://arxiv.org/abs/2406.17513">[arxiv]</a></li>
-  <li><b>2025:</b> <b>Ruhdorfer, C.</b>, Bortoletto, M., Penzkofer, A. & Bulling, A. (2025). <i>The Overcooked Generalisation Challenge: Evaluating Cooperation with Novel Partners in Unknown Environments Using Unsupervised Environment Design.</i> Transactions on Machine Learning Research. <a href="https://openreview.net/pdf?id=K2KtcMlW6j">[paper]</a> <a href="https://www.collaborative-ai.org/publications/ruhdorfer2024_arxiv/">[website]</a> <a href="https://arxiv.org/abs/2406.17949">[arxiv]</a></li>
-  <li><b>2025:</b> <b>Ruhdorfer, C.</b>, Bortoletto, M. & Bulling, A. (2025) <i>The Yōkai Learning Environment: Tracking Beliefs Over Space and Time.</i> IJCAI Workshop on Generative AI & Theory of Mind In Communicating Agents <a href="https://tomworkshop.github.io/assets/acceptedPapers/1_Yokai_Learning_Environment.pdf">[paper]</a> <a href="https://collaborative-ai.org/publications/ruhdorfer25_ijcaiw/">[website]</a> <a href="https://arxiv.org/abs/2508.12480">[arxiv]</a></li> </li>
-  <li><b>2024:</b> Bortoletto, M., <b>Ruhdorfer, C.</b>, Shi, L. & Bulling, A. (2024). <i>Explicit Modelling of Theory of Mind for Belief Prediction in Nonverbal Social Interactions.</i> Proc. European Conference on Artificial Intelligence (ECAI), pp. 1–7, 2024. <b>(oral)</b> <a href="https://collaborative-ai.org/publications/bortoletto24_ecai.pdf">[paper]</a> <a href="https://www.collaborative-ai.org/publications/bortoletto24_ecai/">[website]</a> <a href="https://arxiv.org/abs/2407.06762">[arxiv]</a></li>
-  <li><b>2024:</b> Bortoletto, M., <b>Ruhdorfer, C.</b>, Shi, L. & Bulling, A. (2024). <i>Benchmarking Mental State Representations in Language Models.</i> ICML Workshop on Mechanistic Interpretability. <a href="https://www.collaborative-ai.org/publications/bortoletto24_icmlw.pdf">[paper]</a> <a href="https://www.collaborative-ai.org/publications/bortoletto24_icmlw/">[website]</a> <a href="https://arxiv.org/abs/2406.17513v1">[arxiv]</a></li>
-  <li><b>2024:</b> Bortoletto, M., <b>Ruhdorfer, C.</b>, Abdessaied, A., Shi, L. & Bulling, A. (2024). <i>Limits of Theory of Mind Modelling in Dialogue-Based Collaborative Plan Acquisition.</i> Proc. 62nd Annual Meeting of the Association for Computational Linguistics (ACL), pp. 1–16, 2024. <a href="https://www.collaborative-ai.org/publications/bortoletto24_acl.pdf">[paper]</a> <a href="https://www.collaborative-ai.org/publications/bortoletto24_acl/">[website]</a> <a href="https://arxiv.org/abs/2405.12621">[arxiv]</a> <a href="https://aclanthology.org/2024.acl-long.266/">[acl]</a></li>
-  <li><b>2024:</b> Wang, Y., Jiang, Y., Hu, Z., <b>Ruhdorfer, C.</b>, Bhâce, M., & Bulling, A. (2024). <i>VisRecall++: Analysing and Predicting Visualisation Recallability from Gaze Bahaviour.</i> Proc. ACM on Human-Computer Interaction (PACM HCI), 1–11. <a href="https://www.collaborative-ai.org/publications/wang24_etra.pdf">[paper]</a> <a href="https://www.collaborative-ai.org/publications/wang24_etra/">[website]</a> <a href="https://dl.acm.org/doi/10.1145/3655613">[acm]</a></li>
+<h3>Workshop papers</h3>
+<ol class="publication-list">
   <li><b>2020:</b> <b>Ruhdorfer, C.</b>, & Schulz, S. (2020). <i>Efficient Implementation of Large-Scale Watchlists.</i> PAAR+SC<sup>2</sup> @ International Joint Conference on Automated Reasoning (IJCAR) (pp. 120-133). <a href="http://wwwlehre.dhbw-stuttgart.de/~sschulz/PAPERS/RS-PAAR-2020.pdf">[paper]</a> <a href="http://www.eprover.eu/E-eu/SoftWatch.html">[website]</a></li>
 </ol>
 
-I sometimes collaborate with others to work on topics not related to my core research interests:
-
-<ol>
+<h3>Other collaborations</h3>
+<ol class="publication-list">
   <li><b>2025:</b> Hofmeyer, P. E., Burghaus, H., <b>Ruhdorfer, C.</b>, Oswald, J., Bulling, A., Herdrich, G. (2025) <i>Integration of Machine Learning in High-Enthalpy Plasma Spectroscopy.</i> Proc. International Conference on Flight vehicles, Aerothermodynamics and Re-entry (FAR), pp. 1–8 <a href="https://collaborative-ai.org/publications/hofmeyer25_far.pdf">[paper]</a> <a href="https://collaborative-ai.org/publications/hofmeyer25_far/">[website]</a></li>
 </ol>
-
-<h3 class="post-title">Preprints</h3>
-<ol>
-  <li><b>2026:</b> Forkel, J., <b>Ruhdorfer, C.</b>, Bulling, A. & Foerster, J. (2026) <i>High entropy leads to symmetry equivariant policies in Dec-POMDPs.</i> <a href="https://arxiv.org/abs/2511.22581">[arxiv]</a></li>
-  <li><b>2025:</b> <b>Ruhdorfer, C.</b>, Bortoletto, M., Oei, V., Penzkofer, A. & Bulling, A. (2025). <i>Unsupervised Partner Design Enables Robust Ad-Hoc Teamwork.</i> <a href="https://arxiv.org/abs/2508.06336">[arxiv]</a></li>
-</ol>
-
-<h2 class="post-title">Conferences, Workshops and Other Academic Meetings</h2>
-
-<ul>
-  <li><b>2026:</b> Attended the <a href="https://www.wim.uni-mannheim.de/doering/conferences/rl-2026/">Mannheim Workshop on Reinforcement Learning</a> in February in Mannheim, Germany.</li>
-  <li><b>2025:</b> Attended <a href="https://euro-workshop-on-reinforcement-learning.github.io/ewrl18/">EWRL 2025</a> in September in Tübingen, Germany.</li>
-  <li><b>2025:</b> Attended the IMPRS-IS 2025 Bootcamp in Tübingen and Stuttgart, Germany and presented a poster about my paper: <i>Unsupervised Partner Design Enables Robust Ad-Hoc Teamwork</i>.</li>
-  <li><b>2025:</b> Gave a talk at the <a href="https://tomworkshop.github.io">IJCAI ToM Workshop</a> held in Montral, Canada.</li>
-  <li><b>2025:</b> Accepted into the <a href="https://www.cooperativeai.com/summer-school/summer-school-2025">2025 Cooperative AI Foundation Summer School</a> in Marlow, UK. </li>
-  <li><b>2024:</b> Attended the <a href="https://imprs.is.mpg.de/events/imprs-is-boot-camp">IMPRS-IS 2024 Bootcamp</a> in Sonthofen, Germany and presented a poster about my paper: <i>The Overcooked Generalisation Challenge</i>.</li>
-  <li><b>2024:</b> I help with the organization of the ELLIS Distinguished Lecture Series at the <a href="https://ellis-stuttgart.eu">ELLIS Unit Stuttgart</a>.</li>
-  <li><b>2024;</b> Attended the <a href="https://fcai.fi/ellis-summer-school-2024/home">2024 ELLIS summer school on Collaborative and Generative AI (CoGenAI)</a> at Aalto University, Helsinki, Finnland.</li>
-</ul>
-
-<h2 class="post-title">Awards</h2>
-
-<ul>
-  <li><b>2024</b>: Rul Gunzenhäuser award for the best Master's thesis at the Institute for Visualisation and Interactive Systems, Stuttgart University in 2023.<a href="https://www.collaborative-ai.org/news/2024/04/constantin-ruhdorfer-receives-rul-gunzenhaeuser-preis/">[announcement]</a> <a href="https://www.informatik-forum.org/publicity/preistraeger">[website]</a></li>
-</ul>
-
-<h2 class="post-title">Teaching</h2>
-For details please refer to <a href="https://www.collaborative-ai.org/teaching/">here</a>.
-
-<ul>
-  <li><b>2025 (winter)</b>: Machine Perception and Learning (Tutor) (Master level lecture)</li>
-  <li><b>2025 (winter)</b>: Advanced Topics in Collaborative AI (Tutor) (Master level seminar)</li>
-  <li><b>2024 (winter)</b>: Mediainformatics (Organizer and Tutor) (Bachelor level course)</li>
-  <li><b>2024 (summer)</b>: Computational Theory of Mind and Cognition (Organizer, Tutor and Lecturer) (Master level practical course)</li>
-  <li><b>2024 (summer)</b>: Human Computer Interaction (Tutor) (Bachelor level lecture)</li>
-  <li><b>2023 (winter)</b>: Machine Perception and Learning (Tutor) (Master level lecture)</li>
-</ul>
-
-<h2 class="post-title">Supervision</h2>
-
-I regulary supervise Master and Bachelor theses, see <a href="https://www.collaborative-ai.org/people/ruhdorfer/">here</a> for a full list and if interested our <a href="https://www.collaborative-ai.org/teaching/open-projects/">open projects page</a>. 
-To this day I was or am involved in supervising a total of 3 students in their Master Thesis and a total of 8 students in various group projects offered through some of our lectures.
-
-
-
-<hr />
-
-<h1 class="post-title">News</h2>
-
-<div class="posts">
-  {% for post in paginator.posts %}
-  <div class="post">
-    <h2 class="post-title">
-      <a href="{{ post.url }}">
-        {{ post.title }}
-      </a>
-    </h1>
-
-    <span class="post-date">{{ post.date | date_to_string }}</span>
-
-    {{ post.content }}
-  </div>
-  {% endfor %}
-</div>
-
-<div class="pagination">
-  {% if paginator.next_page %}
-    <a class="pagination-item older" href="{{ site.baseurl }}page{{paginator.next_page}}">Older</a>
-  {% else %}
-    <span class="pagination-item older">Older</span>
-  {% endif %}
-  {% if paginator.previous_page %}
-    {% if paginator.page == 2 %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}">Newer</a>
-    {% else %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}page{{paginator.previous_page}}">Newer</a>
-    {% endif %}
-  {% else %}
-    <span class="pagination-item newer">Newer</span>
-  {% endif %}
-</div>
+</section>
